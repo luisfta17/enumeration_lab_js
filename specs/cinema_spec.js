@@ -34,15 +34,16 @@ describe('Cinema', function () {
   it('should be able to filter films by genre', function () {
     const actual = cinema.getFilmByGenre("drama");
     assert.deepStrictEqual(actual, [moonlight, trainspotting]);
-
   });
 
-  xit('should be able to check whether there are some films from a particular year', function () {
-
+  it('should be able to check whether there are some films from a particular year', function () {
+    const actual = cinema.getFilmByYear(2017);
+    assert.deepStrictEqual(actual, [bladeRunner, dunkirk,trainspotting]);
   });
 
-  xit('should be able to check whether there are no films from a particular year', function () {
-
+  it('should be able to check whether there are no films from a particular year', function () {
+    const actual = cinema.hasFilmByYear(20177);
+    assert.deepStrictEqual(actual, false);
   });
 
   xit('should be able to check whether all films are over a particular length', function () {
